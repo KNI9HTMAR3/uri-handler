@@ -7,14 +7,14 @@
   </head>
   <body>
     <script>
-      const pathSegments = window.location.pathname.split("/").filter(Boolean);
-      const slug = pathSegments[pathSegments.length - 1];
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get("slug");
 
-      if (slug && slug !== "epic") {
+      if (slug) {
         window.location.href = `com.epicgames.launcher://store/p/${slug}`;
       } else {
         document.body.innerHTML +=
-          "<p>Error: Missing game slug in URL path.</p>";
+          "<p>Error: Missing 'slug' query parameter.</p>";
       }
 
       window.addEventListener("focus", () => {
