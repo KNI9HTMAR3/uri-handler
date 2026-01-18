@@ -7,18 +7,18 @@ A simple web-based URI handler for **Steam** and **Epic Games Store** links. Des
 ### Steam
 
 ```
-https://kni9htmar3.github.io/uri-handler/steam/{appid}
+https://kni9htmar3.github.io/uri-handler/steam/?id={appid}
 ```
 
-**Example:** [Open CS2 in Steam](https://kni9htmar3.github.io/uri-handler/steam/730)
+**Example:** [Open CS2 in Steam](https://kni9htmar3.github.io/uri-handler/steam/?id=730)
 
 ### Epic Games
 
 ```
-https://kni9htmar3.github.io/uri-handler/epic/{slug}
+https://kni9htmar3.github.io/uri-handler/epic/?slug={slug}
 ```
 
-**Example:** [Open Styx in Epic](https://kni9htmar3.github.io/uri-handler/epic/styx-shards-of-darkness-77c030)
+**Example:** [Open Styx in Epic](https://kni9htmar3.github.io/uri-handler/epic/?slug=styx-shards-of-darkness-77c030)
 
 ## Notes
 
