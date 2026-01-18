@@ -1,50 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>URI Handler</title>
-  </head>
-  <body>
-    <script>
-      const pathSegments = window.location.pathname.split("/").filter(Boolean);
-
-      // Expected format: /uri-handler/steam/1456200 or /uri-handler/epic/slug
-      // pathSegments = ['uri-handler', 'steam', '1456200'] or ['uri-handler', 'epic', 'slug']
-
-      let platform, identifier;
-
-      // Find platform (steam/epic) in path
-      const steamIndex = pathSegments.indexOf("steam");
-      const epicIndex = pathSegments.indexOf("epic");
-
-      if (steamIndex !== -1 && pathSegments[steamIndex + 1]) {
-        platform = "steam";
-        identifier = pathSegments[steamIndex + 1];
-      } else if (epicIndex !== -1 && pathSegments[epicIndex + 1]) {
-        platform = "epic";
-        identifier = pathSegments[epicIndex + 1];
-      }
-
-      if (platform === "steam" && identifier) {
-        window.location.href = `steam://openurl/https://store.steampowered.com/app/${identifier}`;
-      } else if (platform === "epic" && identifier) {
-        window.location.href = `com.epicgames.launcher://store/p/${identifier}`;
-      } else {
-        document.body.innerHTML = `
-          <h1>URI Handler</h1>
-          <p>Invalid URL format. Use:</p>
-          <ul>
-            <li><strong>Steam:</strong> /steam/{appid}</li>
-            <li><strong>Epic:</strong> /epic/{slug}</li>
-          </ul>
-        `;
-      }
-
-      window.addEventListener("focus", () => window.close());
-      document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "visible") window.close();
-      });
-    </script>
-  </body>
-</html>
+<h1>URI Handler</h1>
+<p>Supported platforms:</p>
+<ul>
+  <li>/steam/&lt;appid&gt;</li>
+  <li>/epic/&lt;game-slug&gt;</li>
+</ul>

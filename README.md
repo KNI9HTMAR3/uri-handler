@@ -24,3 +24,16 @@ https://kni9htmar3.github.io/uri-handler/epic/{slug}
 
 - Requires Steam / Epic Games Launcher installed.
 - Auto closes the tab after opening.
+
+```
+steam-uri-handler
+├─ 404.html
+├─ epic
+│  └─ index.html
+├─ index.html
+├─ LICENSE
+├─ README.md
+└─ steam
+   └─ index.html
+
+```

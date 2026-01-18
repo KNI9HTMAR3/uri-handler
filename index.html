@@ -1,16 +1,66 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>URI Handler</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial;
+        margin: 0;
+        padding: 40px;
+        background: #f7f7fb;
+      }
+      .box {
+        max-width: 700px;
+        margin: auto;
+        background: #fff;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      }
+      code {
+        background: #f2f2f2;
+        padding: 4px 6px;
+        border-radius: 6px;
+      }
+    </style>
   </head>
   <body>
-    <h1>URI Handler</h1>
-    <p>Use path-based URLs to open games:</p>
-    <ul>
-      <li><strong>Steam:</strong> <code>/steam/{appid}</code></li>
-      <li><strong>Epic:</strong> <code>/epic/{slug}</code></li>
-    </ul>
+    <div class="box">
+      <h1>Web URI Handler</h1>
+      <p>
+        A simple web-based URI handler for platforms like Discord that don’t
+        support native URI schemes.
+      </p>
+
+      <h2>Supported platforms</h2>
+      <ul>
+        <li>
+          <strong>Steam</strong><br />
+          <code>/steam/&lt;appid&gt;</code><br />
+          Example:
+          <a href="./steam/1456200">/steam/1456200</a>
+        </li>
+        <li>
+          <strong>Epic Games</strong><br />
+          <code>/epic/&lt;game-slug&gt;</code><br />
+          Example:
+          <a href="./epic/styx-shards-of-darkness-77c030">
+            /epic/styx-shards-of-darkness-77c030
+          </a>
+        </li>
+      </ul>
+
+      <p>
+        The page will attempt to open the native launcher. If the launcher is
+        installed, this tab may close automatically.
+      </p>
+    </div>
   </body>
 </html>
