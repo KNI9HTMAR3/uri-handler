@@ -1,12 +1,26 @@
-# Steam URI Handler
+# URI Handler
 
-This is a simple HTML page that redirects users to `steam://` URIs for opening Steam apps or games. It's designed as a workaround for Discord, which discontinued support for clickable `steam://` links, making it unreliable or impossible to launch Steam directly from Discord messages.
+A simple web-based URI handler for **Steam** and **Epic Games Store** links. Designed as a workaround for platforms like Discord that don't support native URI schemes.
 
 ## Usage
 
-Visit https://KNI9HTMAR3.github.io/steam-uri-handler/?appid=730 to open CS in Steam.
+### Steam
+
+```
+https://kni9htmar3.github.io/uri-handler/steam/{appid}
+```
+
+**Example:** [Open CS2 in Steam](https://kni9htmar3.github.io/uri-handler/steam/730)
+
+### Epic Games
+
+```
+https://kni9htmar3.github.io/uri-handler/epic/{slug}
+```
+
+**Example:** [Open Styx in Epic](https://kni9htmar3.github.io/uri-handler/epic/styx-shards-of-darkness-77c030)
 
 ## Notes
 
-- Requires Steam installed.
+- Requires Steam / Epic Games Launcher installed.
 - Auto closes the tab after opening.

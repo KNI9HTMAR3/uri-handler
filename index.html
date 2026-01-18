@@ -1,27 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Opening Steam</title>
+    <title>URI Handler</title>
   </head>
   <body>
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const appid = urlParams.get("appid");
-      if (appid) {
-        window.location.href = `steam://openurl/https://store.steampowered.com/app/${appid}`;
-      } else {
-        document.body.innerHTML += "<p>Error: Missing appid parameter.</p>";
-      }
-      window.addEventListener("focus", () => {
-        window.close();
-      });
-      document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "visible") {
-          window.close();
-        }
-      });
-    </script>
+    <h1>URI Handler</h1>
+    <p>Use path-based URLs to open games:</p>
+    <ul>
+      <li><strong>Steam:</strong> <code>/steam/{appid}</code></li>
+      <li><strong>Epic:</strong> <code>/epic/{slug}</code></li>
+    </ul>
   </body>
 </html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opening Steam</title>
+  </head>
+  <body>
+    <script>
+      const pathSegments = window.location.pathname.split("/").filter(Boolean);
+      const appid = pathSegments[pathSegments.length - 1];
+
+      if (appid && appid !== "steam") {
+        window.location.href = `steam://openurl/https://store.steampowered.com/app/${appid}`;
+      } else {
+        document.body.innerHTML += "<p>Error: Missing app ID in URL path.</p>";
+      }
+
+      window.addEventListener("focus", () => {
+        window.close();
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          window.close();
+        }
+      });
+    </script>
+  </body>
+</html>
